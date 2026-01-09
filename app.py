@@ -5,6 +5,13 @@ import matplotlib.pyplot as plt
 # Configuración de la página
 st.set_page_config(page_title="Dashboard de Ventas", page_icon="📊")
 
+# Cargar estilos CSS personalizados
+def load_css():
+    with open('.streamlit/style.css') as f:
+        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
+load_css()
+
 # Título de bienvenida
 st.title("¡Bienvenido al Dashboard de Ventas! 📊")
 st.markdown("---")
